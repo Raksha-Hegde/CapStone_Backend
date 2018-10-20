@@ -1,0 +1,224 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 89653248 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2643), pid=10153, tid=0x00007f1220489700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_171-b11) (build 1.8.0_171-8u171-b11-0ubuntu0.16.04.1-b11)
+# Java VM: OpenJDK 64-Bit Server VM (25.171-b11 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f121c078800):  VMThread [stack: 0x00007f1220389000,0x00007f122048a000] [id=10161]
+
+Stack: [0x00007f1220389000,0x00007f122048a000],  sp=0x00007f12204884a0,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa6db9b]
+V  [libjvm.so+0x4c694c]
+V  [libjvm.so+0x8ba818]
+V  [libjvm.so+0x8b4bae]
+V  [libjvm.so+0x92ff96]
+V  [libjvm.so+0x9312c3]
+V  [libjvm.so+0x92d98b]
+V  [libjvm.so+0x9267b9]
+V  [libjvm.so+0x44aa43]
+V  [libjvm.so+0xa6f129]
+V  [libjvm.so+0xa74a07]
+V  [libjvm.so+0xa72107]
+V  [libjvm.so+0xa7358f]
+V  [libjvm.so+0xa73a81]
+V  [libjvm.so+0x8b7c22]
+
+VM_Operation (0x00007f1225f1cf60): CollectForMetadataAllocation, mode: safepoint, requested by thread 0x00007f121c00f000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f121cbaf000 JavaThread "Abandoned connection cleanup thread" daemon [_thread_blocked, id=10179, stack(0x00007f11e23f6000,0x00007f11e24f7000)]
+  0x00007f121cb98000 JavaThread "Tomcat JDBC Pool Cleaner[1984697014:1528799355294]" daemon [_thread_blocked, id=10178, stack(0x00007f11e24f7000,0x00007f11e25f8000)]
+  0x00007f121cb3d000 JavaThread "container-0" [_thread_blocked, id=10177, stack(0x00007f11e27f8000,0x00007f11e28f9000)]
+  0x00007f121cb3a000 JavaThread "ContainerBackgroundProcessor[StandardEngine[Tomcat]]" daemon [_thread_blocked, id=10176, stack(0x00007f11e28f9000,0x00007f11e29fa000)]
+  0x00007f11d0179800 JavaThread "localhost-startStop-1" daemon [_thread_blocked, id=10175, stack(0x00007f11e31fa000,0x00007f11e32fb000)]
+  0x00007f121cb38000 JavaThread "Tomcat-startStop-1" daemon [_thread_blocked, id=10174, stack(0x00007f11e36fb000,0x00007f11e37fc000)]
+  0x00007f121c559800 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=10170, stack(0x00007f11e3cfd000,0x00007f11e3dfe000)]
+  0x00007f121c54e000 JavaThread "RMI TCP Accept-37881" daemon [_thread_in_native, id=10169, stack(0x00007f11e3dfe000,0x00007f11e3eff000)]
+  0x00007f121c537000 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=10168, stack(0x00007f11e3eff000,0x00007f11e4000000)]
+  0x00007f121c0be000 JavaThread "Service Thread" daemon [_thread_blocked, id=10167, stack(0x00007f120cb65000,0x00007f120cc66000)]
+  0x00007f121c0bb000 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=10166, stack(0x00007f120cc66000,0x00007f120cd67000)]
+  0x00007f121c0b8800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=10165, stack(0x00007f120cd67000,0x00007f120ce68000)]
+  0x00007f121c0b7000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=10164, stack(0x00007f1220086000,0x00007f1220187000)]
+  0x00007f121c084800 JavaThread "Finalizer" daemon [_thread_blocked, id=10163, stack(0x00007f1220187000,0x00007f1220288000)]
+  0x00007f121c080000 JavaThread "Reference Handler" daemon [_thread_blocked, id=10162, stack(0x00007f1220288000,0x00007f1220389000)]
+  0x00007f121c00f000 JavaThread "main" [_thread_blocked, id=10158, stack(0x00007f1225e21000,0x00007f1225f22000)]
+
+Other Threads:
+=>0x00007f121c078800 VMThread [stack: 0x00007f1220389000,0x00007f122048a000] [id=10161]
+  0x00007f121c55e800 WatcherThread [stack: 0x00007f11e3bfc000,0x00007f11e3cfd000] [id=10171]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f121c00b540] Threads_lock - owner thread: 0x00007f121c078800
+[0x00007f121c00ba40] Heap_lock - owner thread: 0x00007f121c00f000
+
+Heap:
+ PSYoungGen      total 229376K, used 14073K [0x00000000d6780000, 0x00000000e5980000, 0x0000000100000000)
+  eden space 214016K, 0% used [0x00000000d6780000,0x00000000d6780000,0x00000000e3880000)
+  from space 15360K, 91% used [0x00000000e3880000,0x00000000e463e660,0x00000000e4780000)
+  to   space 11776K, 0% used [0x00000000e4780000,0x00000000e4780000,0x00000000e5300000)
+ ParOldGen       total 54272K, used 14266K [0x0000000083600000, 0x0000000086b00000, 0x00000000d6780000)
+  object space 54272K, 26% used [0x0000000083600000,0x00000000843ee9b0,0x0000000086b00000)
+ Metaspace       used 34844K, capacity 35294K, committed 35416K, reserved 1081344K
+  class space    used 4441K, capacity 4579K, committed 4608K, reserved 1048576K
+
+Card table byte_map: [0x00007f12220e8000,0x00007f12224ce000] byte_map_base: 0x00007f1221ccd000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f12250e8320
+ Begin Bits: [0x00007f12041b0000, 0x00007f12060d8000)
+ End Bits:   [0x00007f12060d8000, 0x00007f1208000000)
+
+Polling page: 0x00007f1225f3c000
+
+CodeCache: size=245760Kb used=7440Kb max_used=7440Kb free=238319Kb
+ bounds [0x00007f120d000000, 0x00007f120d750000, 0x00007f121c000000]
+ total_blobs=3849 nmethods=3370 adapters=392
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 5.857 Thread 0x00007f121c0bb000 3366       1       java.io.ByteArrayOutputStream::ensureCapacity (16 bytes)
+Event: 5.857 Thread 0x00007f121c0bb000 nmethod 3366 0x00007f120d742910 code [0x00007f120d742a80, 0x00007f120d742bc8]
+Event: 5.857 Thread 0x00007f121c0bb000 3367  s    1       java.io.ByteArrayOutputStream::write (32 bytes)
+Event: 5.857 Thread 0x00007f121c0bb000 nmethod 3367 0x00007f120d742c50 code [0x00007f120d742dc0, 0x00007f120d7430a8]
+Event: 6.040 Thread 0x00007f121c0bb000 3368       1       org.hibernate.annotations.common.reflection.java.JavaReflectionManager::getMetadataProvider (23 bytes)
+Event: 6.103 Thread 0x00007f121c0bb000 nmethod 3368 0x00007f120d743550 code [0x00007f120d7436c0, 0x00007f120d743850]
+Event: 6.106 Thread 0x00007f121c0bb000 3369       1       org.hibernate.annotations.common.reflection.java.JavaXAnnotatedElement::getAnnotationReader (12 bytes)
+Event: 6.106 Thread 0x00007f121c0bb000 nmethod 3369 0x00007f120d743910 code [0x00007f120d743a80, 0x00007f120d743c48]
+Event: 6.106 Thread 0x00007f121c0bb000 3370       1       org.hibernate.annotations.common.reflection.java.JavaReflectionManager::buildAnnotationReader (11 bytes)
+Event: 6.106 Thread 0x00007f121c0bb000 nmethod 3370 0x00007f120d743d90 code [0x00007f120d743f00, 0x00007f120d7440c8]
+
+GC Heap History (10 events):
+Event: 2.788 GC heap after
+Heap after GC invocations=5 (full 0):
+ PSYoungGen      total 70656K, used 5091K [0x00000000d6780000, 0x00000000dfa80000, 0x0000000100000000)
+  eden space 65536K, 0% used [0x00000000d6780000,0x00000000d6780000,0x00000000da780000)
+  from space 5120K, 99% used [0x00000000da780000,0x00000000dac78ce0,0x00000000dac80000)
+  to   space 9728K, 0% used [0x00000000df100000,0x00000000df100000,0x00000000dfa80000)
+ ParOldGen       total 86016K, used 7761K [0x0000000083600000, 0x0000000088a00000, 0x00000000d6780000)
+  object space 86016K, 9% used [0x0000000083600000,0x0000000083d94718,0x0000000088a00000)
+ Metaspace       used 20436K, capacity 20736K, committed 20864K, reserved 1067008K
+  class space    used 2581K, capacity 2686K, committed 2688K, reserved 1048576K
+}
+Event: 2.865 GC heap before
+{Heap before GC invocations=6 (full 0):
+ PSYoungGen      total 70656K, used 11758K [0x00000000d6780000, 0x00000000dfa80000, 0x0000000100000000)
+  eden space 65536K, 10% used [0x00000000d6780000,0x00000000d6e02e00,0x00000000da780000)
+  from space 5120K, 99% used [0x00000000da780000,0x00000000dac78ce0,0x00000000dac80000)
+  to   space 9728K, 0% used [0x00000000df100000,0x00000000df100000,0x00000000dfa80000)
+ ParOldGen       total 86016K, used 7761K [0x0000000083600000, 0x0000000088a00000, 0x00000000d6780000)
+  object space 86016K, 9% used [0x0000000083600000,0x0000000083d94718,0x0000000088a00000)
+ Metaspace       used 20828K, capacity 21120K, committed 21248K, reserved 1067008K
+  class space    used 2640K, capacity 2750K, committed 2816K, reserved 1048576K
+Event: 2.873 GC heap after
+Heap after GC invocations=6 (full 0):
+ PSYoungGen      total 139776K, used 5569K [0x00000000d6780000, 0x00000000df980000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000d6780000,0x00000000d6780000,0x00000000de780000)
+  from space 8704K, 63% used [0x00000000df100000,0x00000000df670530,0x00000000df980000)
+  to   space 9216K, 0% used [0x00000000de780000,0x00000000de780000,0x00000000df080000)
+ ParOldGen       total 86016K, used 7761K [0x0000000083600000, 0x0000000088a00000, 0x00000000d6780000)
+  object space 86016K, 9% used [0x0000000083600000,0x0000000083d94718,0x0000000088a00000)
+ Metaspace       used 20828K, capacity 21120K, committed 21248K, reserved 1067008K
+  class space    used 2640K, capacity 2750K, committed 2816K, reserved 1048576K
+}
+Event: 2.873 GC heap before
+{Heap before GC invocations=7 (full 1):
+ PSYoungGen      total 139776K, used 5569K [0x00000000d6780000, 0x00000000df980000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000d6780000,0x00000000d6780000,0x00000000de780000)
+  from space 8704K, 63% used [0x00000000df100000,0x00000000df670530,0x00000000df980000)
+  to   space 9216K, 0% used [0x00000000de780000,0x00000000de780000,0x00000000df080000)
+ ParOldGen       total 86016K, used 7761K [0x0000000083600000, 0x0000000088a00000, 0x00000000d6780000)
+  object space 86016K, 9% used [0x0000000083600000,0x0000000083d94718,0x0000000088a00000)
+ Metaspace       used 20828K, capacity 21120K, committed 21248K, reserved 1067008K
+  class space    used 2640K, capacity 2750K, committed 2816K, reserved 1048576K
+Event: 2.932 GC heap after
+Heap after GC invocations=7 (full 1):
+ PSYoungGen      total 139776K, used 0K [0x00000000d6780000, 0x00000000df980000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000d6780000,0x00000000d6780000,0x00000000de780000)
+  from space 8704K, 0% used [0x00000000df100000,0x00000000df100000,0x00000000df980000)
+  to   space 9216K, 0% used [0x00000000de780000,0x00000000de780000,0x00000000df080000)
+ ParOldGen       total 54272K, used 7125K [0x0000000083600000, 0x0000000086b00000, 0x00000000d6780000)
+  object space 54272K, 13% used [0x0000000083600000,0x0000000083cf5740,0x0000000086b00000)
+ Metaspace       used 20828K, capacity 21120K, committed 21248K, reserved 1067008K
+  class space    used 2640K, capacity 2750K, committed 2816K, reserved 1048576K
+}
+Event: 3.957 GC heap before
+{Heap before GC invocations=8 (full 1):
+ PSYoungGen      total 139776K, used 131062K [0x00000000d6780000, 0x00000000df980000, 0x0000000100000000)
+  eden space 131072K, 99% used [0x00000000d6780000,0x00000000de77db58,0x00000000de780000)
+  from space 8704K, 0% used [0x00000000df100000,0x00000000df100000,0x00000000df980000)
+  to   space 9216K, 0% used [0x00000000de780000,0x00000000de780000,0x00000000df080000)
+ ParOldGen       total 54272K, used 7125K [0x0000000083600000, 0x0000000086b00000, 0x00000000d6780000)
+  object space 54272K, 13% used [0x0000000083600000,0x0000000083cf5740,0x0000000086b00000)
+ Metaspace       used 26756K, capacity 27184K, committed 27392K, reserved 1073152K
+  class space    used 3383K, capacity 3510K, committed 3584K, reserved 1048576K
+Event: 3.978 GC heap after
+Heap after GC invocations=8 (full 1):
+ PSYoungGen      total 140288K, used 9187K [0x00000000d6780000, 0x00000000e5300000, 0x0000000100000000)
+  eden space 131072K, 0% used [0x00000000d6780000,0x00000000d6780000,0x00000000de780000)
+  from space 9216K, 99% used [0x00000000de780000,0x00000000df078c88,0x00000000df080000)
+  to   space 11776K, 0% used [0x00000000e4780000,0x00000000e4780000,0x00000000e5300000)
+ ParOldGen       total 54272K, used 9742K [0x0000000083600000, 0x0000000086b00000, 0x00000000d6780000)
+  object space 54272K, 17% used [0x0000000083600000,0x0000000083f83ad0,0x0000000086b00000)
+ Metaspace       used 26756K, capacity 27184K, committed 27392K, reserved 1073152K
+  class space    used 3383K, capacity 3510K, committed 3584K, reserved 1048576K
+}
+Event: 5.133 GC heap before
+{Heap before GC invocations=9 (full 1):
+ PSYoungGen      total 140288K, used 140259K [0x00000000d6780000, 0x00000000e5300000, 0x0000000100000000)
+  eden space 131072K, 100% used [0x00000000d6780000,0x00000000de780000,0x00000000de780000)
+  from space 9216K, 99% used [0x00000000de780000,0x00000000df078c88,0x00000000df080000)
+  to   space 11776K, 0% used [0x00000000e4780000,0x00000000e4780000,0x00000000e5300000)
+ ParOldGen       total 54272K, used 9742K [0x0000000083600000, 0x0000000086b00000, 0x00000000d6780000)
+  object space 54272K, 17% used [0x0000000083600000,0x0000000083f83ad0,0x0000000086b00000)
+ Metaspace       used 32663K, capacity 33118K, committed 33280K, reserved 1079296K
+  class space    used 4138K, capacity 4259K, committed 4352K, reserved 1048576K
+Event: 5.178 GC heap after
+Heap after GC invocations=9 (full 1):
+ PSYoungGen      total 225792K, used 11768K [0x00000000d6780000, 0x00000000e5980000, 0x0000000100000000)
+  eden space 214016K, 0% used [0x00000000d6780000,0x00000000d6780000,0x00000000e3880000)
+  from space 11776K, 99% used [0x00000000e4780000,0x00000000e52fe170,0x00000000e5300000)
+  to   space 15360K, 0% used [0x00000000e3880000,0x00000000e3880000,0x00000000e4780000)
+ ParOldGen       total 54272K, used 14258K [0x0000000083600000, 0x0000000086b00000, 0x00000000d6780000)
+  object space 54272K, 26% used [0x0000000083600000,0x00000000843ec9b0,0x0000000086b00000)
+ Metaspace       used 32663K, capacity 33118K, committed 33280K, reserved 1079296K
+  class space    used 4138K, capacity 4259K, committed 4352K, reserved 1048576K
+}
+Event: 6.122 GC heap before
+{Heap before GC invocations=10 (full 1):
+ PSYoungGen      total 225792K, used 35446K [0x00000000d6780000, 0x00000000e5980000, 0x0000000100000000)
+  eden space 214016K, 11% used [0x00000000d6780000,0x00000000d7e9f968,0x00000000e3880000)
+  from space 11776K, 99% used [0x00000000e4780000,0x00000000e52fe170,0x00000000e5300000)
+  to   space 15360K, 0% used [0x00000000e3880000,0x00000000e3880000,0x00000000e4780000)
+ ParOldGen       total 54272K, used 14258K [0x0000000083600000, 0x0000000086b00000, 0x00000000d6780000)
+  object space 54272K, 26% used [0x0000000083600000,0x00000000843ec9b0,0x0000000086b00000)
+ Metaspace       used 34844K, capacity 35294K, committed 35416K, reserved 1081344K
+  class space    used 4441K, capacity 4579K, committed 4608K, reserved 1048576K
+
+Deoptimization events (0 events):
+No events
+
